@@ -45,7 +45,7 @@ package com.cjt.concurrency4;
 
  内存屏障(Store Barrier, 存储屏障)
 
- Release Barrier: 防止"下面"的volatile与上面的所有操作的指令重排序。
+ Release Barrier: 防止"下面"的volatile与上面的所有操作的指令重排序。(在volatile操作前将上面的指令执行后释放出去)
  Store Barrier: 重要作用是刷新处理器缓存，结果是可以确保该存储屏障之前一切的操作所生成的结果对于其他处理器来说都可见。
 
  内存屏障(Load Barrier, 加载屏障)
@@ -72,8 +72,9 @@ package com.cjt.concurrency4;
  ArrayList
 
  ****************************************************************************************
- volatile 与 锁 的一些比较
+ volatile 与 锁 的一些比较  (面试)
 
+ 锁更强大  锁还具有排它性
  锁同样具备变量内存可见性与防止指令重排序的功能。
  monitorenter
  内存屏障(Acquire Barrier, 获取屏障)
