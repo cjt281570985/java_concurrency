@@ -13,10 +13,10 @@ import java.util.stream.IntStream;
  2.1如果是公平锁，那么线程会直接放置到AQS阻塞队列的末尾
  2.2如果是非公平锁，那么线程会首先尝试进行CAS计算， 如果成功，则直接获取到锁;
  如果失败，则与公平锁的处理方式-致，被放到阻塞队列末尾
- 3.当锁被释放时(调用了unlock方法)，那么底层会调用release方法对state成员变量值进行减一操作，如果减-后，state值不为0,
+ 3.当锁被释放时(调用了unlock方法)，那么底层会调用release方法对state成员变量值进行减1操作，如果减1后，state值不为0,
  那么release操作就执行完毕;如果减一操作后， state值为0，则调用LockSupport的unpark方 法唤醒该线程后的等待队列中的第一个
  后继线程(pthread_ mutex_ unlock) ，将其唤醒，使之能够获取到对象的锁(release时，对于公平锁与非公平锁的处理逻辑是一致的) ;
- 之所以调用release方法后state值可能不为零，原因在于ReentrantLock是可重入锁，表示线程可以多次调用1ock方法，导致每调用一次，state值都会加一 。
+ 之所以调用release方法后state值可能不为零，原因在于ReentrantLock是可重入锁，表示线程可以多次调用lock方法，导致每调用一次，state值都会加一 。
 
  对于ReentrantLock来说，所谓的.上锁，本质上就是对AQS中的state成员变量的操作:对该成员变量+1，表示上锁;对该成员变量-1，表示释放锁。
  */

@@ -32,7 +32,7 @@ public class MyTest2 {
 
     IntStream.range(0, 10).forEach(i -> new Thread(() -> {
       try {
-        bc.put("hello");
+        bc.put("6666");
       } catch (Exception e) {
 
       }
@@ -71,7 +71,7 @@ class  BoundedContainer {
         putIndex = 0;
       }
       elementCount++;
-      System.out.println("put: " + Arrays.toString(elements));
+      System.out.println("put : " + Arrays.toString(elements));
       notEmptyCondition.signal();
     } finally {
       this.lock.unlock();

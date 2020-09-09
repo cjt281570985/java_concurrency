@@ -20,7 +20,7 @@ public class MyTest1_1 {
       lock.lock();
       System.out.println("myMethod1 invoked!");
     } finally {
-      //lock.unlock();
+      lock.unlock();
     }
   }
 

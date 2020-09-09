@@ -36,7 +36,7 @@ public class MyTest1 {
 
     try {
       Thread.sleep(2000);
-      System.out.println(futureTask.get());
+      System.out.println("结果:" + futureTask.get());
       //System.out.println(futureTask.get(6, TimeUnit.SECONDS));
     } catch (Exception e) {
       e.printStackTrace();

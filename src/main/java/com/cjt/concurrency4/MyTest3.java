@@ -5,7 +5,7 @@ package com.cjt.concurrency4;
  private volatile int count;
 
  volatile关键字主要有三方面作用:
- 1.实现1ong/ double类型变量的原子操作
+ 1.实现 long/double类型变量的原子操作
  2.防止指令重排序
  3.实现变量的可见性
 
@@ -45,7 +45,7 @@ package com.cjt.concurrency4;
 
  内存屏障(Store Barrier, 存储屏障)
 
- Release Barrier: 防止"下面"的volatile与上面的所有操作的指令重排序。(在volatile操作前将上面的指令执行后释放出去)
+ Release Barrier: 防止下面的volatile与上面的所有操作的指令重排序。(在volatile操作前将上面的指令执行后释放出去)
  Store Barrier: 重要作用是刷新处理器缓存，结果是可以确保该存储屏障之前一切的操作所生成的结果对于其他处理器来说都可见。
 
  内存屏障(Load Barrier, 加载屏障)
@@ -56,7 +56,7 @@ package com.cjt.concurrency4;
 
  int a= 1;
  String s = "hello";
-
+`
  Load Barrier: 可以刷新处理器缓存，同步其他处理器对该volatile变量的修改结果。
  Acquire Barrier: 可以防止"上面"的volatile读取操作与下面的所有操作语句的指令重排序。
 
