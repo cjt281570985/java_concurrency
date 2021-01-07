@@ -6,9 +6,9 @@ public class TestEditFileNameReplaceMac {
 
     public static void main(String[] args) {
         //查找win文件
-        File file = new File("/Volumes/500G/202007/突破JAVA万人面试，懂多线程者得天下视/资料/");
+        File file = new File("/Volumes/500G/202009/Final Cut Pro X 10.4.6教程/");
         //String newPath = "D:\\study\\李兴华Oracle";
-        String delStr = "【www.12580sky.com】";
+        String delStr = "Final Cut Pro X 10.4.6中文基础教程 - ";
         editName(file, delStr, file.getAbsolutePath());
 
         String addName = "chenjt";

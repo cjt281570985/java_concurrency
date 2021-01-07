@@ -1,6 +1,7 @@
 package com.cjt.concurrency5;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 /**
@@ -28,9 +29,9 @@ public class MyTest1 {
     System.out.println("启动子线程完毕");
 
     try {
-      countDownLatch.await(); //使用此方法,若countDownLatch没有减为0,则运行不会卡住
-      //boolean await = countDownLatch.await(1, TimeUnit.SECONDS); //使用此方法时如果超时还没执行完,则会往下继续执行,同时子线程也会执行
-      //System.out.println("await: " + await);
+      //countDownLatch.await(); //使用此方法,若countDownLatch没有减为0,则运行不会卡住
+      boolean await = countDownLatch.await(1, TimeUnit.SECONDS); //使用此方法时如果超时还没执行完,则会往下继续执行,同时子线程也会执行
+      System.out.println("await: " + await);
       System.out.println("countDownLatch.await...");
     } catch (InterruptedException e) {
       System.out.println("time out...");
