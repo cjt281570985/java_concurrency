@@ -2,7 +2,7 @@ package com.cjt.concurrency7;
 
 /**
  ThreadLocal
-
+ https://blog.csdn.net/qq_43255017/article/details/126296062
  本质上，ThreadLocal是通过空间来换取时间，从而实现每个线程当中都会有一个变量的副本，这样每个线程就都会操作该副本,从而完全规避了多线程的并发问题。
 
  Java中存在4种类型引用

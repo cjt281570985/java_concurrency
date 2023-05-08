@@ -6,17 +6,18 @@ public class TestEditFileNameReplaceMac {
 
     public static void main(String[] args) {
         //查找win文件
-        File file = new File("/Volumes/500G/202009/Final Cut Pro X 10.4.6教程/");
+        File file = new File("/Volumes/4T/study/Python/路飞-爬虫开发+APP逆向超级大神班/06--爬虫6期：爬虫&逆向6期【完结】");
         //String newPath = "D:\\study\\李兴华Oracle";
-        String delStr = "Final Cut Pro X 10.4.6中文基础教程 - ";
+        String delStr = "第18章-day17识货2" + "-";
         editName(file, delStr, file.getAbsolutePath());
 
-        String addName = "chenjt";
+        String addName = "555";
         // addFileName(file, ".avi", addName, newPath);
     }
 
     private static void editName(File file, String delStr, String newPath) {
         String name = file.getName();
+        System.out.println(name);
         if (name.indexOf(delStr) != -1) {
             //String newName = name.substring(regex.length());//截取_后面的String
             String newName = name.replace(delStr, "");
