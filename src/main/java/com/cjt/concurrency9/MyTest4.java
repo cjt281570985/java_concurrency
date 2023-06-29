@@ -29,13 +29,13 @@ public class MyTest4 {
 
         System.out.println(Thread.currentThread().getName());
 
-        return i;
+        return i*i;
       });
     });
 
     for (int i = 0; i < 10; i++) {
       int result = completionService.take().get();
-      System.out.println(result);
+      System.out.println("result: " + result);
     }
 
     executorService.shutdown();

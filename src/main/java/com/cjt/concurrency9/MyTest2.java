@@ -39,10 +39,10 @@ public class MyTest2 {
   TERMINATED: 线程池的终止状态, 当terminated方法执行完后,线程池将处理该状态之下.
 
   59.
-  RUNNING -> sHUTDOWN: 当調用了线程池的shutdown方法吋，或者当finalize方法被隠式调用后(核方法内部会调用shutdown方法)
+  RUNNING -> SHUTDOWNT: 当調用了线程池的shutdown方法吋，或者当finalize方法被隠式调用后(核方法内部会调用shutdown方法)
   RUNNING, SHUTDOWNT > STOP: 当調用了线程池的shutdownNow方法时
   SHUTDOWN TIDYING:在线程池与阻塞从列均变为空时
-  STOP -> TIDYING: 在线程池変为空时
+  STOP -> TIDYING: 在线程池变为空时
   TIDYING -> TERMINATED: 在terminated方法被抗行完毕时
 
    */
@@ -57,7 +57,7 @@ public class MyTest2 {
     //当拒绝策略是 DiscardOldestPolicy 时, 会丢弃最早的未处理请求, 执行新提交的任务
     //当拒绝策略是 CallerRunsPolicy 时, 多出来的任务会由main线程来执行
 
-    IntStream.range(0,10).forEach(i -> {
+    IntStream.range(0,9).forEach(i -> {
       executorService.submit(() -> {
 
         try {
@@ -74,6 +74,7 @@ public class MyTest2 {
 
     executorService.shutdown();
   }
+
 
 
 }
